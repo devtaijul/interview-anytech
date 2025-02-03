@@ -5,7 +5,7 @@ export const PowerFeature = () => {
   return (
     <section className=" py-8">
       <div className="container">
-        <div className="grid grid-cols-2 items-start gap-4 justify-between">
+        <div className="grid lg:grid-cols-2 grid-col-span-1 items-start gap-4 justify-between">
           <div className="py">
             <h2 className=" font-semibold tracking-wider text-primary">
               POWERING THE FUTURE OF FINANCE

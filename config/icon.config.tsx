@@ -4,6 +4,7 @@ import { GradientPolygonSectionIcon } from "@/components/icons/gradient-polygon-
 import { LightIcon } from "@/components/icons/light-icon";
 import { LogoWhite } from "@/components/icons/logo-white";
 import { MenuIcon } from "@/components/icons/menu-icon";
+import { MobileLineWeveIcon } from "@/components/icons/mobile-line-weve-icon";
 import { NetworkIcon } from "@/components/icons/network-icon";
 import { Power1 } from "@/components/icons/power-1";
 import { Power2 } from "@/components/icons/power-2";
@@ -30,6 +31,7 @@ const ICON_NAMES = {
   logo_white_icon: LogoWhite,
   menu_icon: MenuIcon,
   close_icon: CloseIcon,
+  mobile_line_weve_icon: MobileLineWeveIcon,
 };
 
 export { ICON_NAMES };

@@ -78,26 +78,32 @@ export const TrustComponent = () => {
               TRUSTED BY THE BEST
             </h2>
           </div>
-          <div className="flex justify-center items-start gap-44">
-            <div className="flex items-center  justify-center flex-col">
-              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent text-8xl font-bold  mt-4">
+          <div className="flex justify-center items-start flex-col lg:flex-row lg:gap-44 w-full gap-6">
+            <div className="flex items-center justify-between lg:justify-center w-full   lg:flex-col">
+              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
                 {">"}
                 <span>{20}</span>
               </h1>
-              <p className="font-medium text-xl ">Years of Experience</p>
+              <p className="font-medium text-xl text-end lg:text-center">
+                Years of Experience
+              </p>
             </div>
-            <div className="flex items-center  justify-center flex-col">
-              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent text-8xl font-bold  mt-4">
+            <div className="flex items-center justify-between lg:justify-center w-full   lg:flex-col">
+              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
                 <span>{40}</span> {"+"}
               </h1>
-              <p className="font-medium text-xl ">Financial Institutions</p>
+              <p className="font-medium text-xl text-end lg:text-center">
+                Financial Institutions
+              </p>
             </div>
-            <div className="flex  items-center flex-col">
-              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent text-8xl font-bold  mt-4">
+            <div className="flex  items-center justify-between lg:justify-center w-full lg:flex-col">
+              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
                 {">"}
                 <span>{200}</span>m
               </h1>
-              <p className="font-medium text-xl ">Customers Each</p>
+              <p className="font-medium text-xl text-end lg:text-center">
+                Customers Each
+              </p>
             </div>
           </div>
         </div>

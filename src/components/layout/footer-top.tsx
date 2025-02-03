@@ -9,7 +9,7 @@ export const FooterTop = () => {
           <div className="flex items-center space-x-4">
             <Icons name="logo_white_icon" />
           </div>
-          <div className="flex items-center space-x-4">
+          <div className=" items-center space-x-4 lg:flex hidden">
             <Link href={"#"} className="text-lg font-semibold text-[#00E9EA]">
               Our Solutions
             </Link>
@@ -24,6 +24,7 @@ export const FooterTop = () => {
               AnyPaaS
             </Link>
           </div>
+          <div className=" items-center space-x-4 lg:hidden"></div>
         </div>
       </div>
     </section>

@@ -59,7 +59,7 @@ export const TechnologyCarousel = ({
   }, [emblaApi]);
   return (
     <>
-      <div className="flex justify-center items-center gap-2 mt-12">
+      <div className=" justify-center lg:flex hidden items-center gap-2 mt-12">
         {scrollSnaps.map((snap, index) => (
           <button
             key={index}
