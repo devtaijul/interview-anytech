@@ -15,6 +15,7 @@ export default {
         secondary: "var(--secondary)",
         light: "var(--light)",
         orrange: "var(--orrange)",
+        "dark-light": "var(--dark-light)",
       },
       container: {
         center: true,

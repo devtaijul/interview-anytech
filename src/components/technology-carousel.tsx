@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useEffect } from "react";
 import { TechnologyContent } from "./technology";
 import Image from "next/image";
+import { useTechButton } from "./technology-carousel-button";
 
 const TechnologyCard = ({
   btn_content,
@@ -48,6 +49,9 @@ export const TechnologyCarousel = ({
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
 
+  const { selectedIndex, scrollSnaps, onDotButtonClick } =
+    useTechButton(emblaApi);
+
   useEffect(() => {
     if (emblaApi) {
       console.log(emblaApi.slideNodes()); // Access API
@@ -55,7 +59,21 @@ export const TechnologyCarousel = ({
   }, [emblaApi]);
   return (
     <>
-      <div></div>
+      <div className="flex justify-center items-center gap-2 mt-12">
+        {scrollSnaps.map((snap, index) => (
+          <button
+            key={index}
+            onClick={() => onDotButtonClick(index)}
+            className={`${
+              selectedIndex === index
+                ? "bg-dark-light"
+                : "bg-transparent  hover:bg-light"
+            } mr-2 px-8 py-2 rounded-full text-primary font-bold text-lg`}
+          >
+            {technologies[index].btn_content}
+          </button>
+        ))}
+      </div>
       <div className="shadow-lg rounded-3xl shadow-blue-50">
         <div className="embla" ref={emblaRef}>
           <div className="embla__container">
