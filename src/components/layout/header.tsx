@@ -30,7 +30,7 @@ export default function Header(): JSX.Element {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full transition-all duration-300 ${
+      className={`fixed z-10 top-0 left-0 w-full transition-all duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
       } ${isSticky ? "bg-white shadow-md" : "bg-transparent"} py-4 px-6 text-${
         isSticky ? "black" : "white"
