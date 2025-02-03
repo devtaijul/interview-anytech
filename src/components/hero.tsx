@@ -26,10 +26,10 @@ export default function HeroSection() {
       <div className="container relative z-10 w-full h-full md:flex md:items-center md:justify-center">
         <div className="h-fit lg:flex-[65] xl:flex-[75]">
           <header className="max-w-2xl lg:space-y-sm space-y-[16px] mb-[32px]">
-            <h1 className="lg:max-w-max lg:whitespace-pre-line lg:text-head-1 font-Montserrat text-res-head-1 text-white">
+            <h1 className="lg:max-w-max tracking-wide font-bold lg:text-7xl lg:whitespace-pre-line lg:text-head-1 font-Montserrat text-res-head-1 text-white">
               Embrace the future of finance
             </h1>{" "}
-            <h5 className="!text-white max-w-[37rem] lg:mr-5 text-res-head-5 text-blue-main lg:text-head-5 font-Montserrat">
+            <h5 className="!text-white font-bold max-w-2xl lg:mr-5 text-res-head-5 text-blue-main lg:text-head-5 font-Montserrat">
               Reimagine financial services with AnyTech’s open platform,
               distributed banking solution that powers transformation
             </h5>
