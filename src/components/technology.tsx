@@ -55,15 +55,15 @@ const technology_content: TechnologyContent[] = [
 
 export const Technology = () => {
   return (
-    <section>
-      <div className="container">
+    <section className="py-16">
+      <div className="container ">
         <div>
           <div className="text-center mb-8">
             <h2 className="font-semibold tracking-wider text-primary">
-              OUR PHILOSOPHY
+              TECHNOLOGY BUILT FOR YOU
             </h2>
             <h1 className="text-secondary text-6xl font-semibold mt-4">
-              Human-centred innovation
+              The future of finance
             </h1>
           </div>
         </div>
@@ -71,7 +71,9 @@ export const Technology = () => {
           <TechnologyCarousel technologies={technology_content} />
         </div>
       </div>
-      <Icons name="gradient_polygon_section_icon" />
+      <div className="mt-12">
+        <Icons name="gradient_polygon_section_icon" />
+      </div>
     </section>
   );
 };
