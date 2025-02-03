@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Icons } from "./icons/icons";
+import { ICON_NAMES } from "../../config/icon.config";
 
 interface PhilosophyContent {
   id: number;
@@ -22,6 +23,7 @@ const philosophy_content_list: PhilosophyContent[] = [
     id: 2,
     title: "Simplify the complex",
     desc: "Simplify complex processes and optimise your financial operations by leveraging the power of AI, Blockchain, Cloud Computing, and Big Data.",
+    icon_name: "network_icon",
     link: "/assets/light.avif",
     is_icon: false,
   },
@@ -44,7 +46,9 @@ const PhilosophyCard = ({
   return (
     <div className="flex flex-col items-start bg-light p-8 rounded-2xl">
       {is_icon ? (
-        <div className="mb-8">{icon_name && <Icons name={icon_name} />}</div>
+        <div className="mb-8">
+          {icon_name && <Icons name={icon_name as keyof typeof ICON_NAMES} />}
+        </div>
       ) : (
         <div className="mb-8">
           <Image src={link as string} width={50} height={50} alt="icon" />
@@ -58,13 +62,13 @@ const PhilosophyCard = ({
 
 export const Philosophy = () => {
   return (
-    <section className="py-12">
+    <section className="py-12 mb-20">
       <div className="container">
         <div className="text-center mb-8">
           <h2 className="font-semibold tracking-wider text-primary">
             OUR PHILOSOPHY
           </h2>
-          <h1 className="text-secondary text-7xl font-semibold mt-4">
+          <h1 className="text-secondary text-6xl font-semibold mt-4">
             Human-centred innovation
           </h1>
         </div>

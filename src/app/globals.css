@@ -86,3 +86,14 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 97%);
   }
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
