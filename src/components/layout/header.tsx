@@ -1,17 +1,21 @@
 "use client";
 
-import { useState, useEffect, JSX } from "react";
-import Link from "next/link";
-import { FaGlobe } from "react-icons/fa";
 import Image from "next/image";
+import Link from "next/link";
+import { JSX, useEffect, useState } from "react";
 import Button from "../common/button";
-import { nav } from "@/data/store";
+import { Icons } from "../icons/icons";
+import { DesktopNav } from "./desktop-nav";
 
 export default function Header(): JSX.Element {
-  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+  const [isMenuActve, setIsMenuActive] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(true);
   const [isSticky, setIsSticky] = useState<boolean>(false);
   let lastScrollY = 0;
+
+  const handleToggleMenu = () => {
+    setIsMenuActive(!isMenuActve);
+  };
 
   const handleScroll = () => {
     if (window.scrollY > lastScrollY) {
@@ -32,9 +36,9 @@ export default function Header(): JSX.Element {
     <header
       className={`fixed z-10 top-0 left-0 w-full transition-all duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
-      } ${isSticky ? "bg-white shadow-md" : "bg-transparent"} py-4 px-6 text-${
-        isSticky ? "black" : "white"
-      }`}
+      } ${
+        isSticky ? "bg-white shadow-md" : "bg-primary lg:bg-transparent"
+      } py-5 px-6 text-${isSticky ? "black" : "white"}`}
     >
       <div className="flex justify-between items-center container mx-auto">
         <div className="text-2xl font-bold flex items-center">
@@ -47,60 +51,8 @@ export default function Header(): JSX.Element {
             />
           </Link>
         </div>
-        <nav className="flex items-center space-x-6">
-          {nav.map((item) => {
-            if (item.subMenu) {
-              return (
-                <div className="relative" key={item.id}>
-                  <button
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className="hover:text-gray-300"
-                  >
-                    {item.label} ▼
-                  </button>
-                  {dropdownOpen && (
-                    <div className="absolute mt-2 bg-white text-black shadow-lg rounded-lg py-2 w-40">
-                      {item.subMenu.map((sub) => (
-                        <Link
-                          key={sub.id}
-                          href={sub.href}
-                          className="block px-4 py-2 hover:bg-gray-200"
-                        >
-                          {sub.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            } else {
-              return (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  className="hover:text-gray-300"
-                >
-                  {item.label}
-                </Link>
-              );
-            }
-          })}
-
-          <button className="flex items-center hover:text-gray-300">
-            <FaGlobe className="mr-1" /> EN
-          </button>
-        </nav>
-        <div>
-          {/* <Link
-            href="#"
-            className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-              isSticky
-                ? "bg-orrange text-white hover:bg-blue-700"
-                : "bg-white text-blue-900 hover:bg-gray-200"
-            }`}
-          >
-            Contact Us
-          </Link> */}
+        <DesktopNav />
+        <div className="hidden lg:block">
           <Button
             href="#"
             variant={isSticky ? "primary" : "outline"}
@@ -110,6 +62,15 @@ export default function Header(): JSX.Element {
           >
             Contact us
           </Button>
+        </div>
+        <div className=" lg:hidden">
+          <button onClick={handleToggleMenu}>
+            {isMenuActve ? (
+              <Icons name="close_icon" />
+            ) : (
+              <Icons name="menu_icon" />
+            )}
+          </button>
         </div>
       </div>
     </header>
