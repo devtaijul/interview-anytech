@@ -1,7 +1,11 @@
 import { ArrowIcon } from "@/components/icons/arrow-icon";
+import { GradientPolygonSectionIcon } from "@/components/icons/gradient-polygon-section-icon";
+import { LightIcon } from "@/components/icons/light-icon";
+import { NetworkIcon } from "@/components/icons/network-icon";
 import { Power1 } from "@/components/icons/power-1";
 import { Power2 } from "@/components/icons/power-2";
 import { Power3 } from "@/components/icons/power-3";
+import { ProcessorIcon } from "@/components/icons/processor.icon";
 import { WeveLineDesktop1 } from "@/components/icons/weve-line-desktop-1";
 import { WeveLineDesktop2 } from "@/components/icons/weve-line-desktop-2";
 import { WeveLineDesktop3 } from "@/components/icons/weve-line-desktop-3";
@@ -16,6 +20,10 @@ const ICON_NAMES = {
   power_1_icon: Power1,
   power_2_icon: Power2,
   power_3_icon: Power3,
+  gradient_polygon_section_icon: GradientPolygonSectionIcon,
+  network_icon: NetworkIcon,
+  light_icon: LightIcon,
+  processor_icon: ProcessorIcon,
 };
 
 export { ICON_NAMES };

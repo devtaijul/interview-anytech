@@ -8,7 +8,7 @@
   --primary: #1f80f0;
   --secondary: "#0B305B";
   --orrange: "#FE8B53";
-  --light: "#EEF6FE";
+  --light: #f8fcff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,7 +18,7 @@
     --primary: #1f80f0;
     --secondary: #0b305b;
     --orrange: #fe8b53;
-    --light: #eef6fe;
+    --light: #f8fcff;
   }
 }
 
