@@ -1,6 +1,7 @@
 import { ArrowIcon } from "@/components/icons/arrow-icon";
 import { GradientPolygonSectionIcon } from "@/components/icons/gradient-polygon-section-icon";
 import { LightIcon } from "@/components/icons/light-icon";
+import { LogoWhite } from "@/components/icons/logo-white";
 import { NetworkIcon } from "@/components/icons/network-icon";
 import { Power1 } from "@/components/icons/power-1";
 import { Power2 } from "@/components/icons/power-2";
@@ -24,6 +25,7 @@ const ICON_NAMES = {
   network_icon: NetworkIcon,
   light_icon: LightIcon,
   processor_icon: ProcessorIcon,
+  logo_white_icon: LogoWhite,
 };
 
 export { ICON_NAMES };
