@@ -3,10 +3,14 @@
 import { useState, useEffect, JSX } from "react";
 import Link from "next/link";
 import { FaGlobe } from "react-icons/fa";
+import Image from "next/image";
+import Button from "../common/button";
+import { nav } from "@/data/store";
 
 export default function Header(): JSX.Element {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [visible, setVisible] = useState<boolean>(true);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
   let lastScrollY = 0;
 
   const handleScroll = () => {
@@ -15,6 +19,7 @@ export default function Header(): JSX.Element {
     } else {
       setVisible(true);
     }
+    setIsSticky(window.scrollY > 200);
     lastScrollY = window.scrollY;
   };
 
@@ -25,51 +30,88 @@ export default function Header(): JSX.Element {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full transition-transform duration-300 ${
+      className={`fixed z-10 top-0 left-0 w-full transition-all duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
-      } bg-transparent text-white py-4 px-6 flex justify-between items-center`}
+      } ${isSticky ? "bg-white shadow-md" : "bg-transparent"} py-4 px-6 text-${
+        isSticky ? "black" : "white"
+      }`}
     >
-      <div className="text-2xl font-bold flex items-center">
-        <span className="mr-2">\uD83D\uDCBB</span> ANYTECH
-      </div>
-      <nav className="flex items-center space-x-6">
-        <div className="relative">
-          <button
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="hover:text-gray-300"
-          >
-            Solutions ▼
-          </button>
-          {dropdownOpen && (
-            <div className="absolute mt-2 bg-white text-black shadow-lg rounded-lg py-2 w-40">
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-200">
-                AnyCaaS
-              </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-200">
-                AnyBaaS
-              </Link>
-              <Link href="#" className="block px-4 py-2 hover:bg-gray-200">
-                AnyPaaS
-              </Link>
-            </div>
-          )}
+      <div className="flex justify-between items-center container mx-auto">
+        <div className="text-2xl font-bold flex items-center">
+          <Link href="/">
+            <Image
+              src={isSticky ? "/assets/logo-blue.svg" : "/assets/logo.svg"}
+              alt="Logo"
+              width={170}
+              height={27}
+            />
+          </Link>
         </div>
-        <Link href="#" className="hover:text-gray-300">
-          Services
-        </Link>
-        <Link href="#" className="hover:text-gray-300">
-          About Us
-        </Link>
-        <button className="flex items-center hover:text-gray-300">
-          <FaGlobe className="mr-1" /> EN
-        </button>
-        <Link
-          href="#"
-          className="bg-white text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200"
-        >
-          Contact Us
-        </Link>
-      </nav>
+        <nav className="flex items-center space-x-6">
+          {nav.map((item) => {
+            if (item.subMenu) {
+              return (
+                <div className="relative" key={item.id}>
+                  <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="hover:text-gray-300"
+                  >
+                    {item.label} ▼
+                  </button>
+                  {dropdownOpen && (
+                    <div className="absolute mt-2 bg-white text-black shadow-lg rounded-lg py-2 w-40">
+                      {item.subMenu.map((sub) => (
+                        <Link
+                          key={sub.id}
+                          href={sub.href}
+                          className="block px-4 py-2 hover:bg-gray-200"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            } else {
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  className="hover:text-gray-300"
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+          })}
+
+          <button className="flex items-center hover:text-gray-300">
+            <FaGlobe className="mr-1" /> EN
+          </button>
+        </nav>
+        <div>
+          {/* <Link
+            href="#"
+            className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+              isSticky
+                ? "bg-orrange text-white hover:bg-blue-700"
+                : "bg-white text-blue-900 hover:bg-gray-200"
+            }`}
+          >
+            Contact Us
+          </Link> */}
+          <Button
+            href="#"
+            variant={isSticky ? "primary" : "outline"}
+            className={`!border-white !text-white ${
+              isSticky ? "!bg-orrange" : ""
+            }`}
+          >
+            Contact us
+          </Button>
+        </div>
+      </div>
     </header>
   );
 }

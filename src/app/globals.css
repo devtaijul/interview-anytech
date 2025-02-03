@@ -5,15 +5,84 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #1f80f0;
+  --secondary: "#0B305B";
+  --orrange: "#FE8B53";
+  --light: "#EEF6FE";
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #1f80f0;
+    --secondary: #0b305b;
+    --orrange: #fe8b53;
+    --light: #eef6fe;
   }
 }
 
 body {
   font-family: "Montserrat", "Inter", sans-serif;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    190deg,
+    #1f80f0 15.05%,
+    rgba(31, 128, 240, 0) 30.39%
+  );
+}
+
+#home-hero__content__container {
+  background: radial-gradient(
+    59.82% 121.73% at -9.66% 130.31%,
+    #00e9ea 0%,
+    #1f80f0 52.08%,
+    #005bc4 100%
+  );
+}
+
+@media only screen and (max-width: 1024px) {
+  #home-hero__content__container {
+    background: radial-gradient(
+      134.02% 81.35% at -9.66% 129.92%,
+      #00e9ea 0%,
+      #1f80f0 52.08%,
+      #005bc4 100%
+    );
+  }
+}
+
+.bg-clip-hero-image {
+  -webkit-clip-path: polygon(
+    67% 0,
+    100% 0,
+    100% 68%,
+    80% 100%,
+    0 100%,
+    32% 51%
+  );
+  clip-path: polygon(67% 0, 100% 0, 100% 68%, 80% 100%, 0 100%, 32% 51%);
+}
+
+@media (min-width: 1024px) {
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .lg\:bg-clip-hero-container {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:bg-clip-hero-container {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 97%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 97%);
+  }
 }
