@@ -1,4 +1,4 @@
-export const WeveLineDesktop3 = (props: any) => (
+export const WeveLineDesktop4 = (props: any) => (
   <svg
     width={1920}
     height={628}

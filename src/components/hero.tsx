@@ -62,15 +62,28 @@ export default function HeroSection() {
       </div>
 
       {/* Background SVG elements */}
-      {/* <div
-        className="absolute w-40 h-40 bg-blue-300 opacity-50 rounded-full"
+      <div
+        className="absolute w-full bottom-0 right-96 "
         style={{
           transform: `translate(${mousePosition.x * -0.02}px, ${
             mousePosition.y * -0.02
           }px)`,
         }}
-      ></div>
+      >
+        <Icons name="weve_line_desktop_2_icon" />
+      </div>
       <div
+        className="absolute w-full top-0 right-20  "
+        style={{
+          transform: `translate(${mousePosition.x * 0.02}px, ${
+            mousePosition.y * 0.02
+          }px)`,
+        }}
+      >
+        <Icons name="weve_line_desktop_1_icon" />
+      </div>
+
+      {/* <div
         className="absolute w-32 h-32 bg-blue-400 opacity-50 rounded-full top-1/3 right-1/4"
         style={{
           transform: `translate(${mousePosition.x * -0.015}px, ${
