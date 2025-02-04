@@ -25,17 +25,20 @@ export const PowerFeature = () => {
             </p>
           </div>
           <div className="relative flex justify-center items-center">
-            <div className="p-8 max-w-[426px] relative max-h-[517px]">
+            <div className="p-12 max-w-[426px] relative max-h-[517px]">
               <div>
-                <div className="absolute z-10 top-44 left-0 animate-bounce-slow">
+                <div className="absolute z-20 top-44 left-0 animate-bounce-slow">
                   <Icons name="power_1_icon" />
                 </div>
 
-                <div className="absolute z-10 top-56 left-32">
+                <div className="absolute z-20 top-56 left-32">
                   <Icons name="power_2_icon" />
                 </div>
-                <div className="absolute z-10 top-28 right-0">
+                <div className="absolute z-20 top-28 right-0">
                   <Icons name="power_3_icon" />
+                </div>
+                <div className="absolute z-20 bottom-24 right-0">
+                  <Icons name="line_icon" />
                 </div>
               </div>
               <Image
@@ -43,7 +46,17 @@ export const PowerFeature = () => {
                 width={426}
                 height={517}
                 alt="hero"
+                className="z-10 relative"
               />
+              <div className="absolute -top-4 -left-4 w-full h-full z-0">
+                <Image
+                  src="/assets/frames/content-image-1.png"
+                  alt="frame"
+                  width={500}
+                  height={500}
+                  className="w-full h-full"
+                />
+              </div>
             </div>
           </div>
         </div>

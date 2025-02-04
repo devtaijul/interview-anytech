@@ -2,6 +2,7 @@ import { ArrowIcon } from "@/components/icons/arrow-icon";
 import { CloseIcon } from "@/components/icons/close-icon";
 import { GradientPolygonSectionIcon } from "@/components/icons/gradient-polygon-section-icon";
 import { LightIcon } from "@/components/icons/light-icon";
+import { LineIcon } from "@/components/icons/line-icon";
 import { LogoWhite } from "@/components/icons/logo-white";
 import { MenuIcon } from "@/components/icons/menu-icon";
 import { MobileLineWeveIcon } from "@/components/icons/mobile-line-weve-icon";
@@ -32,6 +33,7 @@ const ICON_NAMES = {
   menu_icon: MenuIcon,
   close_icon: CloseIcon,
   mobile_line_weve_icon: MobileLineWeveIcon,
+  line_icon: LineIcon,
 };
 
 export { ICON_NAMES };
