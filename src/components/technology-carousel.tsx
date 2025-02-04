@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { TechnologyContent } from "./technology";
 import Image from "next/image";
 import { useTechButton } from "./technology-carousel-button";
+import Autoplay from "embla-carousel-autoplay";
 
 const TechnologyCard = ({
   btn_content,
@@ -47,7 +48,7 @@ export const TechnologyCarousel = ({
 }: {
   technologies: TechnologyContent[];
 }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Autoplay()]);
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
     useTechButton(emblaApi);
