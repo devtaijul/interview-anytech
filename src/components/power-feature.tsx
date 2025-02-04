@@ -7,10 +7,10 @@ export const PowerFeature = () => {
       <div className="container">
         <div className="grid lg:grid-cols-2 grid-col-span-1 items-start gap-4 justify-between">
           <div className="py">
-            <h2 className=" font-semibold tracking-wider text-primary">
+            <h2 className=" font-semibold tracking-wider text-primary text-xs sm:text-sm md:text-base">
               POWERING THE FUTURE OF FINANCE
             </h2>
-            <p className=" text-secondary text-7xl font-semibold mt-4">
+            <p className=" text-secondary  font-semibold mt-4 xl:text-6xl text-3xl  md:text-4xl lg:text-5xl">
               Uncovering new ways to delight customers
             </p>
             <p className=" text-secondary  font-semibold mt-5">

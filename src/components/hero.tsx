@@ -26,7 +26,7 @@ export default function HeroSection() {
       <div className="container relative z-10 w-full h-full md:flex md:items-center md:justify-center">
         <div className="h-fit lg:flex-[65] xl:flex-[75]">
           <header className="max-w-2xl lg:space-y-sm space-y-[16px] mb-[32px]">
-            <h1 className="lg:max-w-max tracking-wide font-bold lg:text-7xl lg:whitespace-pre-line lg:text-head-1 font-Montserrat text-res-head-1 text-white">
+            <h1 className="lg:max-w-max tracking-wide font-bold  lg:whitespace-pre-line lg:text-head-1 font-Montserrat text-res-head-1 text-white xl:text-7xl text-3xl md:text-4xl lg:text-5xl">
               Embrace the future of finance
             </h1>{" "}
             <h5 className="!text-white font-bold max-w-2xl lg:mr-5 text-res-head-5 text-blue-main lg:text-head-5 font-Montserrat">
@@ -87,6 +87,9 @@ export default function HeroSection() {
         initial={{ x: 150, y: 0 }}
         whileInView={{ x: 0, y: 0 }}
         transition={{ duration: 1 }}
+        viewport={{
+          once: true,
+        }}
         className="absolute hidden w-full lg:block top-0 right-20"
       >
         <div

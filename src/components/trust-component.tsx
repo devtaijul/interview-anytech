@@ -1,4 +1,7 @@
+"use client";
+import { animate, useMotionValue, useTransform, motion } from "motion/react";
 import Image from "next/image";
+import { useEffect } from "react";
 
 interface ClientLogo {
   id: number;
@@ -68,46 +71,78 @@ const client_logos: ClientLogo[] = [
   },
 ];
 
+const H1 = ({ value }: { value: number }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(() => Math.round(count.get()));
+
+  useEffect(() => {
+    const controls = animate(count, value, { duration: 2 });
+
+    return () => controls.stop();
+  }, [count, value]);
+  return <motion.span>{rounded}</motion.span>;
+};
+
+const trust_records = [
+  {
+    id: 1,
+    count: 20,
+    GenerateText: ({ value }: { value: number }) => (
+      <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
+        {">"}
+        <H1 value={value} />
+      </h1>
+    ),
+    title: "Years of Experience",
+  },
+  {
+    id: 2,
+    count: 40,
+    GenerateText: ({ value }: { value: number }) => (
+      <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
+        <H1 value={value} />
+      </h1>
+    ),
+    title: "Financial Institutions",
+  },
+  {
+    id: 3,
+    count: 100,
+    GenerateText: ({ value }: { value: number }) => (
+      <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
+        {">"}
+        <H1 value={value} />m
+      </h1>
+    ),
+    title: "Customers Each",
+  },
+];
+
 export const TrustComponent = () => {
   return (
     <section className="py-16">
       <div className="container">
         <div>
           <div className="text-center my-6">
-            <h2 className="font-semibold tracking-wider text-primary">
+            <h2 className="font-semibold tracking-wider text-primary text-xs sm:text-sm md:text-base">
               TRUSTED BY THE BEST
             </h2>
           </div>
           <div className="flex justify-center items-start flex-col lg:flex-row lg:gap-44 w-full gap-6">
-            <div className="flex items-center justify-between lg:justify-center w-full   lg:flex-col">
-              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
-                {">"}
-                <span>{20}</span>
-              </h1>
-              <p className="font-medium text-xl text-end lg:text-center">
-                Years of Experience
-              </p>
-            </div>
-            <div className="flex items-center justify-between lg:justify-center w-full   lg:flex-col">
-              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
-                <span>{40}</span> {"+"}
-              </h1>
-              <p className="font-medium text-xl text-end lg:text-center">
-                Financial Institutions
-              </p>
-            </div>
-            <div className="flex  items-center justify-between lg:justify-center w-full lg:flex-col">
-              <h1 className="mb-4 bg-gradient-to-tr from-secondary to-primary bg-clip-text text-transparent lg:text-8xl text-6xl font-bold  mt-4">
-                {">"}
-                <span>{200}</span>m
-              </h1>
-              <p className="font-medium text-xl text-end lg:text-center">
-                Customers Each
-              </p>
-            </div>
+            {trust_records.map((record) => (
+              <div
+                key={record.id}
+                className="flex items-center justify-between lg:justify-center w-full lg:flex-col border-b border-dashed border-primary  lg:border-none"
+              >
+                <record.GenerateText value={record.count} />
+                <p className="font-medium text-xl text-end lg:text-center">
+                  {record.title}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-        <div className="grid grid-cols-5 gap-4 mt-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mt-12">
           {client_logos.map((client) => (
             <div
               key={client.id}

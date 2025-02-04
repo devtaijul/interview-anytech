@@ -56,6 +56,9 @@ const PhilosophyCard = ({
         x: 0,
         y: 0,
       }}
+      viewport={{
+        once: true,
+      }}
       transition={{
         duration: 0.5 + id * 0.2,
       }}
@@ -81,10 +84,10 @@ export const Philosophy = () => {
     <section className="py-12 mb-20">
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className="font-semibold tracking-wider text-primary">
+          <h2 className="font-semibold tracking-wider text-primary text-xs sm:text-sm md:text-base">
             OUR PHILOSOPHY
           </h2>
-          <h1 className="text-secondary text-6xl font-semibold mt-4">
+          <h1 className="text-secondary font-semibold mt-4 xl:text-6xl text-3xl md:text-4xl lg:text-5xl">
             Human-centred innovation
           </h1>
         </div>

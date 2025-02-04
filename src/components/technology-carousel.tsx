@@ -15,13 +15,13 @@ const TechnologyCard = ({
   title,
 }: TechnologyContent) => {
   return (
-    <section className="embla__slide rounded-3xl p-16  bg-white shadow-lg shadow-blue-50">
+    <section className="embla__slide rounded-3xl p-4 md:p-m-8 lg:p-16  bg-white shadow-lg shadow-blue-50">
       <div className="grid grid-col-span-1 lg:grid-cols-2 gap-6">
         <div className="flex flex-col gap-6">
-          <h2 className="font-semibold tracking-wider text-primary">
+          <h2 className="font-semibold tracking-wider text-primary text-xs sm:text-sm md:text-base">
             {btn_content}
           </h2>
-          <h1 className="text-secondary text-6xl font-semibold mt-4">
+          <h1 className="text-secondary l font-semibold mt-4 xl:text-6xl text-3xl md:text-4xl lg:text-5xl">
             {title}
           </h1>
           <div className="flex flex-col gap-6">
