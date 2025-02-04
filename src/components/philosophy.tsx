@@ -72,9 +72,18 @@ export const Philosophy = () => {
             Human-centred innovation
           </h1>
         </div>
-        <div>
+        <div className="md:block hidden">
           <Image
             src="/assets/block-chain-desktop.avif"
+            width={1440}
+            height={800}
+            alt="hero"
+            className="w-full"
+          />
+        </div>
+        <div className="md:hidden">
+          <Image
+            src="/assets/block-chain-mobile.avif"
             width={1440}
             height={800}
             alt="hero"

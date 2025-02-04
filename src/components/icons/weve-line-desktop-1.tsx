@@ -1,4 +1,6 @@
-export const WeveLineDesktop1 = (props: any) => (
+import { SVGProps } from "react";
+
+export const WeveLineDesktop1 = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={1920}
     height={929}

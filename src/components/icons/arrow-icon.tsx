@@ -1,6 +1,8 @@
 "use client";
 
-export const ArrowIcon = (props: any) => (
+import { SVGProps } from "react";
+
+export const ArrowIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     width={6}
     height={9}

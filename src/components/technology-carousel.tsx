@@ -15,7 +15,7 @@ const TechnologyCard = ({
 }: TechnologyContent) => {
   return (
     <section className="embla__slide rounded-3xl p-16  bg-white shadow-lg shadow-blue-50">
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-col-span-1 lg:grid-cols-2 gap-6">
         <div className="flex flex-col gap-6">
           <h2 className="font-semibold tracking-wider text-primary">
             {btn_content}

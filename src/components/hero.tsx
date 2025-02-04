@@ -62,7 +62,7 @@ export default function HeroSection() {
 
       {/* Background SVG elements */}
       <div
-        className="absolute w-full lg:hidden bottom-0 right-96 "
+        className="absolute w-full hidden lg:block bottom-0 right-96 "
         style={{
           transform: `translate(${mousePosition.x * -0.02}px, ${
             mousePosition.y * -0.02
@@ -72,7 +72,7 @@ export default function HeroSection() {
         <Icons name="weve_line_desktop_2_icon" />
       </div>
       <div
-        className="absolute w-full lg:hidden top-0 right-20  "
+        className="absolute w-full  lg:block top-0 right-20  "
         style={{
           transform: `translate(${mousePosition.x * 0.02}px, ${
             mousePosition.y * 0.02
