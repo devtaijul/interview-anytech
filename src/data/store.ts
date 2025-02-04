@@ -1,7 +1,21 @@
-export const nav = [
+export interface SubMenu {
+  id: number;
+  label: string;
+  href: string;
+}
+
+export interface Nav {
+  id: number;
+  label: string;
+  subMenu?: SubMenu[];
+  href: string;
+}
+
+export const nav: Nav[] = [
   {
     id: 1,
     label: "Solution",
+    href: "#",
     subMenu: [
       {
         id: 1,

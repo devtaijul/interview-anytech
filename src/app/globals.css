@@ -8,7 +8,8 @@
   --primary: #1f80f0;
   --secondary: "#0B305B";
   --orrange: "#FE8B53";
-  --light: "#EEF6FE";
+  --light: #f8fcff;
+  --dark-light: #b9d9ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,7 +19,8 @@
     --primary: #1f80f0;
     --secondary: #0b305b;
     --orrange: #fe8b53;
-    --light: #eef6fe;
+    --light: #f8fcff;
+    --dark-light: #b9d9ff;
   }
 }
 
@@ -84,5 +86,37 @@ body {
   .lg\:bg-clip-hero-container {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 97%);
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 97%);
+  }
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+#common-cta_container {
+  background: radial-gradient(
+    24.45% 88.58% at 23.57% 2%,
+    #00e9ea 0%,
+    #1f80f0 52.08%,
+    #005bc4 100%
+  );
+}
+
+.bg-clip-cta {
+  -webkit-clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 14%, 100% 100%, 0% 100%);
+}
+
+@media (min-width: 1280px) {
+  .bg-clip-cta {
+    -webkit-clip-path: polygon(0 0, 100% 49%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 49%, 100% 100%, 0% 100%);
   }
 }

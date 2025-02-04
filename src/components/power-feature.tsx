@@ -3,22 +3,22 @@ import { Icons } from "./icons/icons";
 
 export const PowerFeature = () => {
   return (
-    <section className="bg-gradient-to-tr py-8 from-light via-90% via-white to-white">
+    <section className=" py-8">
       <div className="container">
-        <div className="grid grid-cols-2 items-start gap-4 justify-between">
+        <div className="grid lg:grid-cols-2 grid-col-span-1 items-start gap-4 justify-between">
           <div className="py">
-            <h2 className=" font-bold tracking-wider text-primary">
+            <h2 className=" font-semibold tracking-wider text-primary">
               POWERING THE FUTURE OF FINANCE
             </h2>
-            <p className=" text-dark text-7xl font-semibold mt-4">
+            <p className=" text-secondary text-7xl font-semibold mt-4">
               Uncovering new ways to delight customers
             </p>
-            <p className=" text-dark  font-semibold mt-5">
+            <p className=" text-secondary  font-semibold mt-5">
               AnyTech is revolutionising financial technology by introducing
               innovative and real-time transaction account processing
               capabilities, specifically designed for retail financial services.
             </p>
-            <p className=" text-[#114a8b]  font-semibold mt-5 text-primary">
+            <p className=" text-[#0d4688]  font-semibold mt-5 text-primary">
               Our modern approach surpasses traditional banking and card
               processing systems, empowering you with the most advanced
               technology for lasting success.
@@ -47,6 +47,9 @@ export const PowerFeature = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <Icons name="gradient_polygon_section_icon" />
       </div>
     </section>
   );
