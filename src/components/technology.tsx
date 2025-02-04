@@ -24,32 +24,32 @@ const technology_content: TechnologyContent[] = [
   {
     id: 2,
     btn_content: "Agile and adaptable",
-    title: "Purpose-built financial services",
+    title: "Agile and adaptable for growth",
     desk1:
-      "Elevate customer experience and achieve agile financial product innovation with the world’s first, consumer-centric, real-time transaction account processing and credit limit system.",
+      "Innovate with evolving customer demands through our open platform-based technology architecture. Stay ahead of the ever-changing financial landscape with a strong focus on security, compliance and performance.",
     desk2:
-      "Experience the advantages of integrated retail financial services technology, real-time analysis of transactional behaviour and product marketing opportunities.",
-    image_url: "/assets/technology1.avif",
+      "Optimise your offerings to unlock new revenue streams and deliver an extraordinary customer experience, with digitally designed core banking, payment processing and lending capabilities.",
+    image_url: "/assets/technology2.avif",
   },
   {
     id: 3,
     btn_content: "Compliance ready",
-    title: "Purpose-built financial services",
+    title: "Manage compliance with ease",
     desk1:
-      "Elevate customer experience and achieve agile financial product innovation with the world’s first, consumer-centric, real-time transaction account processing and credit limit system.",
+      "Navigate through the evolving regulatory landscape with confidence by streamlining compliance management—through real-time risk monitoring solutions powered by AI and machine learning.",
     desk2:
-      "Experience the advantages of integrated retail financial services technology, real-time analysis of transactional behaviour and product marketing opportunities.",
-    image_url: "/assets/technology1.avif",
+      "Transform your compliance strategy with flexible and diversified policy rules, powered by cutting-edge technology that is designed for seamless integration with core banking and card payment systems.",
+    image_url: "/assets/technology3.avif",
   },
   {
     id: 4,
     btn_content: "Secure and safe",
-    title: "Purpose-built financial services",
+    title: "Highly secure and safe",
     desk1:
-      "Elevate customer experience and achieve agile financial product innovation with the world’s first, consumer-centric, real-time transaction account processing and credit limit system.",
+      "Discover unparalleled security trusted by financial institutions across the globe. Our applications are meticulously developed in compliance with international security standards, drawing on 20 years of technical expertise.",
     desk2:
-      "Experience the advantages of integrated retail financial services technology, real-time analysis of transactional behaviour and product marketing opportunities.",
-    image_url: "/assets/technology1.avif",
+      "Join over 40 esteemed Fls, each serving more than 200 million customers, and benefit from our secure, robust and reliable infrastructure.",
+    image_url: "/assets/technology4.avif",
   },
 ];
 
