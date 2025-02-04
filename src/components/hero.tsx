@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Button from "./common/button";
 import { Icons } from "./icons/icons";
+import { motion } from "motion/react";
 
 export default function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -25,7 +26,7 @@ export default function HeroSection() {
       <div className="container relative z-10 w-full h-full md:flex md:items-center md:justify-center">
         <div className="h-fit lg:flex-[65] xl:flex-[75]">
           <header className="max-w-2xl lg:space-y-sm space-y-[16px] mb-[32px]">
-            <h1 className="lg:max-w-max tracking-wide font-bold lg:text-7xl lg:whitespace-pre-line lg:text-head-1 font-Montserrat text-res-head-1 text-white">
+            <h1 className="lg:max-w-max tracking-wide font-bold  lg:whitespace-pre-line lg:text-head-1 font-Montserrat text-res-head-1 text-white xl:text-7xl text-3xl md:text-4xl lg:text-5xl">
               Embrace the future of finance
             </h1>{" "}
             <h5 className="!text-white font-bold max-w-2xl lg:mr-5 text-res-head-5 text-blue-main lg:text-head-5 font-Montserrat">
@@ -45,9 +46,12 @@ export default function HeroSection() {
         </div>{" "}
         <div className="lg:flex-[35] xl:flex-[25] lg:block hidden"></div>
       </div>
-      <div className="hidden lg:block absolute top-0 xl:left-[35%] xl:w-[65%] left-1/2 lg:w-[56%] h-full bg-clip-hero-image pointer-events-none svelte-1lc7tvy">
+      <div className="hidden lg:block absolute top-0 xl:left-[35%] xl:w-[65%] left-1/2 lg:w-[56%] h-full bg-clip-hero-image pointer-events-none">
         <figure className="h-[115%] w-[115%] object-cover">
-          <img
+          <motion.img
+            initial={{ x: 150, y: 0 }}
+            whileInView={{ x: 0, y: 0 }}
+            transition={{ duration: 1 }}
             srcSet="https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=320&amp;auto=format 320w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=640&amp;auto=format 640w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=960&amp;auto=format 960w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=1280&amp;auto=format 1280w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=1600&amp;auto=format 1600w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=1920&amp;auto=format 1920w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=2240&amp;auto=format 2240w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=2560&amp;auto=format 2560w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=2880&amp;auto=format 2880w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=3200&amp;auto=format 3200w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=3520&amp;auto=format 3520w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=3840&amp;auto=format 3840w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=4160&amp;auto=format 4160w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=4480&amp;auto=format 4480w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=4800&amp;auto=format 4800w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=5120&amp;auto=format 5120w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=5440&amp;auto=format 5440w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=5760&amp;auto=format 5760w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=6080&amp;auto=format 6080w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=6400&amp;auto=format 6400w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=6720&amp;auto=format 6720w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=7040&amp;auto=format 7040w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=7360&amp;auto=format 7360w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=7680&amp;auto=format 7680w, https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?w=7952&amp;auto=format 7952w"
             src="https://cdn.sanity.io/images/6jywt20u/production/4c4adc11b7ca6ea25c7e7cba555d8f0b06488f3f-7952x5304.jpg?auto=format"
             width="7952"
@@ -57,30 +61,48 @@ export default function HeroSection() {
             alt="background image"
           />
         </figure>
-        <div className="gradient-overlay svelte-1lc7tvy"></div>
+        <div className="gradient-overlay"></div>
       </div>
 
       {/* Background SVG elements */}
-      <div
+      <motion.div
+        initial={{ x: -150, y: 0 }}
+        whileInView={{ x: 0, y: 0 }}
+        transition={{ duration: 1 }}
         className="absolute w-full hidden lg:block bottom-0 right-96 "
-        style={{
-          transform: `translate(${mousePosition.x * -0.02}px, ${
-            mousePosition.y * -0.02
-          }px)`,
-        }}
       >
-        <Icons name="weve_line_desktop_2_icon" />
-      </div>
-      <div
-        className="absolute w-full  lg:block top-0 right-20  "
-        style={{
-          transform: `translate(${mousePosition.x * 0.02}px, ${
-            mousePosition.y * 0.02
-          }px)`,
+        <div
+          className=" w-full  "
+          style={{
+            transform: `translate(${mousePosition.x * -0.02}px, ${
+              mousePosition.y * -0.02
+            }px)`,
+          }}
+        >
+          <Icons name="weve_line_desktop_2_icon" />
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ x: 150, y: 0 }}
+        whileInView={{ x: 0, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{
+          once: true,
         }}
+        className="absolute hidden w-full lg:block top-0 right-20"
       >
-        <Icons name="weve_line_desktop_1_icon" />
-      </div>
+        <div
+          className=" w-full  "
+          style={{
+            transform: `translate(${mousePosition.x * 0.02}px, ${
+              mousePosition.y * 0.02
+            }px)`,
+          }}
+        >
+          <Icons name="weve_line_desktop_1_icon" />
+        </div>
+      </motion.div>
 
       <div className="absolute w-full lg:hidden bottom-0 left-0 ">
         <Icons name="mobile_line_weve_icon" />

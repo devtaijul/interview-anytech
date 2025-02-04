@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import { Icons } from "./icons/icons";
 import { ICON_NAMES } from "../../config/icon.config";
+import { motion } from "motion/react";
 
 interface PhilosophyContent {
   id: number;
@@ -42,9 +44,26 @@ const PhilosophyCard = ({
   icon_name,
   is_icon,
   link,
+  id,
 }: PhilosophyContent) => {
   return (
-    <div className="flex flex-col items-start bg-light p-8 rounded-2xl">
+    <motion.div
+      initial={{
+        x: 0,
+        y: 200,
+      }}
+      whileInView={{
+        x: 0,
+        y: 0,
+      }}
+      viewport={{
+        once: true,
+      }}
+      transition={{
+        duration: 0.5 + id * 0.2,
+      }}
+      className="flex flex-col items-start bg-light p-8 rounded-2xl"
+    >
       {is_icon ? (
         <div className="mb-8">
           {icon_name && <Icons name={icon_name as keyof typeof ICON_NAMES} />}
@@ -56,7 +75,7 @@ const PhilosophyCard = ({
       )}
       <h2 className="font-semibold text-secondary mb-6 text-2xl">{title}</h2>
       <p className="text-secondary ">{desc}</p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -65,10 +84,10 @@ export const Philosophy = () => {
     <section className="py-12 mb-20">
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className="font-semibold tracking-wider text-primary">
+          <h2 className="font-semibold tracking-wider text-primary text-xs sm:text-sm md:text-base">
             OUR PHILOSOPHY
           </h2>
-          <h1 className="text-secondary text-6xl font-semibold mt-4">
+          <h1 className="text-secondary font-semibold mt-4 xl:text-6xl text-3xl md:text-4xl lg:text-5xl">
             Human-centred innovation
           </h1>
         </div>

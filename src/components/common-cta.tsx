@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Button from "./common/button";
 import { Icons } from "./icons/icons";
+import { motion } from "motion/react";
 
 export const CommonCta = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -40,26 +41,42 @@ export const CommonCta = () => {
         </div>
       </div>{" "}
       {/* Background SVG elements */}
-      <div
-        className="absolute w-full bottom-0 right-0 "
-        style={{
-          transform: `translate(${mousePosition.x * -0.02}px, ${
-            mousePosition.y * -0.02
-          }px)`,
-        }}
+      <motion.div
+        initial={{ x: -150, y: 0 }}
+        whileInView={{ x: 0, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="absolute w-full hidden lg:block bottom-0 right-0 "
       >
-        <Icons name="weve_line_desktop_3_icon" />
-      </div>
-      <div
-        className="absolute w-full top-0 right-0  "
-        style={{
-          transform: `translate(${mousePosition.x * 0.02}px, ${
-            mousePosition.y * 0.02
-          }px)`,
-        }}
+        <div
+          className=" w-full  "
+          style={{
+            transform: `translate(${mousePosition.x * -0.02}px, ${
+              mousePosition.y * -0.02
+            }px)`,
+          }}
+        >
+          <Icons name="weve_line_desktop_3_icon" />
+        </div>
+      </motion.div>
+      <motion.div
+        initial={{ x: 150, y: 0 }}
+        whileInView={{ x: 0, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="absolute w-full hidden lg:block top-0 right-0 "
       >
-        <Icons name="weve_line_desktop_1_icon" />
-      </div>
+        <div
+          className=" w-full   "
+          style={{
+            transform: `translate(${mousePosition.x * 0.02}px, ${
+              mousePosition.y * 0.02
+            }px)`,
+          }}
+        >
+          <Icons name="weve_line_desktop_1_icon" />
+        </div>
+      </motion.div>
     </section>
   );
 };

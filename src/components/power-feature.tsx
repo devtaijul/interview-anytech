@@ -7,10 +7,10 @@ export const PowerFeature = () => {
       <div className="container">
         <div className="grid lg:grid-cols-2 grid-col-span-1 items-start gap-4 justify-between">
           <div className="py">
-            <h2 className=" font-semibold tracking-wider text-primary">
+            <h2 className=" font-semibold tracking-wider text-primary text-xs sm:text-sm md:text-base">
               POWERING THE FUTURE OF FINANCE
             </h2>
-            <p className=" text-secondary text-7xl font-semibold mt-4">
+            <p className=" text-secondary  font-semibold mt-4 xl:text-6xl text-3xl  md:text-4xl lg:text-5xl">
               Uncovering new ways to delight customers
             </p>
             <p className=" text-secondary  font-semibold mt-5">
@@ -25,19 +25,19 @@ export const PowerFeature = () => {
             </p>
           </div>
           <div className="relative flex justify-center items-center">
-            <div className="z-10">
-              <div className="absolute z-10 top-56 left-10">
-                <Icons name="power_1_icon" />
-              </div>
+            <div className="p-8 max-w-[426px] relative max-h-[517px]">
+              <div>
+                <div className="absolute z-10 top-44 left-0 animate-bounce-slow">
+                  <Icons name="power_1_icon" />
+                </div>
 
-              <div className="absolute z-10 top-72 left-40">
-                <Icons name="power_2_icon" />
+                <div className="absolute z-10 top-56 left-32">
+                  <Icons name="power_2_icon" />
+                </div>
+                <div className="absolute z-10 top-28 right-0">
+                  <Icons name="power_3_icon" />
+                </div>
               </div>
-              <div className="absolute z-10 top-40 right-6">
-                <Icons name="power_3_icon" />
-              </div>
-            </div>
-            <div className=" max-w-[426px] max-h-[517px]">
               <Image
                 src="/assets/power-finance.avif"
                 width={426}
