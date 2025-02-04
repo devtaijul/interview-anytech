@@ -25,19 +25,19 @@ export const PowerFeature = () => {
             </p>
           </div>
           <div className="relative flex justify-center items-center">
-            <div className="z-10">
-              <div className="absolute z-10 top-56 left-10">
-                <Icons name="power_1_icon" />
-              </div>
+            <div className="p-8 max-w-[426px] relative max-h-[517px]">
+              <div>
+                <div className="absolute z-10 top-44 left-0 animate-bounce-slow">
+                  <Icons name="power_1_icon" />
+                </div>
 
-              <div className="absolute z-10 top-72 left-40">
-                <Icons name="power_2_icon" />
+                <div className="absolute z-10 top-56 left-32">
+                  <Icons name="power_2_icon" />
+                </div>
+                <div className="absolute z-10 top-28 right-0">
+                  <Icons name="power_3_icon" />
+                </div>
               </div>
-              <div className="absolute z-10 top-40 right-6">
-                <Icons name="power_3_icon" />
-              </div>
-            </div>
-            <div className=" max-w-[426px] max-h-[517px]">
               <Image
                 src="/assets/power-finance.avif"
                 width={426}
