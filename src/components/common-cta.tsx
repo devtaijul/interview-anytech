@@ -1,21 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Button from "./common/button";
 import { Icons } from "./icons/icons";
 import { motion } from "motion/react";
+import { useMouseMove } from "@/hook/useMouseMove";
 
 export const CommonCta = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event: MouseEvent) => {
-    setMousePosition({ x: event.clientX, y: event.clientY });
-  };
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  const { mousePosition } = useMouseMove();
 
   return (
     <section
